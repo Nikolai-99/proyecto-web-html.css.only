@@ -1012,7 +1012,7 @@ MEDIA QUERIES - RESPONSIVE DESIGN
     max-width: 270px; /* Mantenemos el 30% de 900px */
     gap: 5px;
   }
-} /* <--- ¡ESTA LLAVE ES VITAL! Cierra el media query de 350px */
+} 
 
 /* ================================================================================
 CONTROL DE DESCRIPCIONES DE CARTAS SEGÚN EL SOBRE
@@ -1039,7 +1039,12 @@ CONTROL DE DESCRIPCIONES DE CARTAS SEGÚN EL SOBRE
     animation: fadeIn 0.4s ease-out forwards;
 }
 
-body:has(#card-1-selected:checked) .slot-1 .card, 
+/* ================================================================================
+AJUSTES DE CARTAS PARA MÓVILES
+================================================================================ 
+*/
+@media (max-width: 480px) {
+  body:has(#card-1-selected:checked) .slot-1 .card, 
   body:has(#card-2-selected:checked) .slot-2 .card, 
   body:has(#card-3-selected:checked) .slot-3 .card, 
   body:has(#card-4-selected:checked) .slot-4 .card {
@@ -1057,3 +1062,4 @@ body:has(#card-1-selected:checked) .slot-1 .card,
     margin-bottom: 0.5rem;
     font-size: 0.65rem;
   }
+}
